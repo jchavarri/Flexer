@@ -2,15 +2,12 @@
 
 Flexer is a FramerJS module that allows you to create flexible layouts. This means you can use proportions or relative values instead of absolute pixels to position and animate layers on your prototypes.
 
+**NOTE**: Flexer is in a very early stage of development, so unexpected behavior is... expected. It's a work in progress. All bug reports, feature requests, and general feedback are greatly appreciated! 👊
+
 ## Demo
 
-[Here](http://jchavarri.github.io/Flexer/). You can check the code in the [gh-pages branch](https://github.com/jchavarri/Flexer/tree/gh-pages). 
-
-## Version 
-
-0.0.2
-
-**NOTE**: Flexer is in a very early stage of development, so unexpected behavior is... expected. All bug reports, feature requests, and general feedback are greatly appreciated! 👊
+- [Main demo](http://jchavarri.github.io/Flexer/)(wip). You can check the code in the [gh-pages branch](https://github.com/jchavarri/Flexer/tree/gh-pages). 
+- [Animated accordion menu demo](http://share.framerjs.com/zzrns0ixovna/) in less than 20 lines of code.
 
 ## 3-Step Installation
 
@@ -22,9 +19,17 @@ In order to install it, you will need [node/npm](https://nodejs.org/en/download/
 
 For further information about modules, check the awesomic [Framer documentation](http://framerjs.com/docs/#modules.modules).
 
-## Usage
+## How does it work?
 
-Once you import Flexer, you will have all these properties available in your layers (from [css-layout readme](https://github.com/facebook/css-layout)):
+Once you import the module on your main file, Flexer will add the properties listed below to the `Layer` class. Flexer tries to not be intrusive and doesn't modify your layers until you use one of these properties.
+
+This means you can have in the same project some layers with the default Framer layout (using `x`, `y`, `width`, `height`) and other layers with a flexible layout.
+
+NOTE: Once a layer becomes *flexible*, you should use `left`, `right`, `top`, `bottom` and `fixedWidth`, `fixedHeight` instead of `x`, `y`, `width`, `height`.
+
+## Properties added to `Layer`
+
+From [css-layout readme](https://github.com/facebook/css-layout):
 
 - `fixedWidth`, `fixedHeight`: positive number (animatable)
 - `minWidth`, `minHeight`: positive number (animatable)
@@ -40,7 +45,7 @@ Once you import Flexer, you will have all these properties available in your lay
 - `flexWrap`: 'wrap', 'nowrap'
 - `position`: 'relative', 'absolute'
 
-NOTE: `borderWidth` is not available at the moment due to conflicts with the existing `Layer` property.
+NOTE: `borderWidth` is not available for now, until I find a way to solve the conflict with the existing `Layer` property.
 
 ## One more thing...
 
