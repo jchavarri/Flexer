@@ -7,7 +7,7 @@ Flexer is a FramerJS module that allows you to create flexible layouts. This mea
 ## Demo
 
 - [Main demo](http://jchavarri.github.io/Flexer/)(wip). You can check the code in the [gh-pages branch](https://github.com/jchavarri/Flexer/tree/gh-pages). 
-- [Animated accordion menu demo](http://share.framerjs.com/zzrns0ixovna/) in less than 20 lines of code.
+- [Animated accordion menu demo](http://share.framerjs.com/fyfyh73ccfwu/) in less than 30 lines of code.
 
 ## 3-Step Installation
 
@@ -25,7 +25,7 @@ Once you import the module on your main file, Flexer will add the properties lis
 
 This means you can have in the same project some layers with the default Framer layout (using `x`, `y`, `width`, `height`) and other layers with a flexible layout.
 
-NOTE: Once a layer becomes *flexible*, you should use `left`, `right`, `top`, `bottom` and `fixedWidth`, `fixedHeight` instead of `x`, `y`, `width`, `height`.
+NOTE: Once a layer becomes *flexible*, you should use `left`, `right`, `top`, `bottom` and `fixedWidth`, `fixedHeight` instead of `x`, `y`, `width`, `height`. If you want to position elements absolutely and not relatively to their parents and siblings, use `position: absolute`.
 
 ## Properties added to `Layer`
 
@@ -56,6 +56,12 @@ If you want to animate the layout transitions, you can use the `layout.curve` pr
 	# will be animated
 	layerA.layout.curve = "spring(300, 40, 10)"
 ```
+
+## Resources
+
+- [A complete guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) (css-tricks.com)
+- [Using CSS flexible boxes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) (Mozilla Developer Network)
+- [CSS flexible box layout specification](https://www.w3.org/TR/css-flexbox-1/) (w3c.org)
 
 ## Thanks to
 
