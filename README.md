@@ -4,7 +4,7 @@ Flexer is a FramerJS module that allows you to create flexible layouts. This mea
 
 ## Version 
 
-0.0.1
+0.0.2
 
 **NOTE**: Flexer is in a very early stage of development, so unexpected behavior is... expected. All bug reports, feature requests, and general feedback are greatly appreciated! 👊
 
@@ -43,7 +43,9 @@ NOTE: `borderWidth` is not available at the moment due to conflicts with the exi
 If you want to animate the layout transitions, you can use the `layout.curve` property of the layer. For example:
 
 ```coffeescript
-layerA.layout.curve = "spring(300, 40, 10)" # Now all layout modifications on layerA and sublayers will be animated
+	# Now all layout modifications on layerA and sublayers 
+	# will be animated
+	layerA.layout.curve = "spring(300, 40, 10)"
 ```
 
 ## Thanks to
