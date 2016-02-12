@@ -7,7 +7,7 @@ window.Framer.Defaults.DeviceView = {"deviceScale":-1,"deviceType":"iphone-6-sil
 
 window.Framer.Defaults.DeviceComponent = {"deviceScale":-1,"deviceType":"iphone-6-silver","contentScale":1,"orientation":0};
 
-window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"Untitled.framer"};
+window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"Flexer example"};
 
 Framer.Device = new Framer.DeviceView();
 Framer.Device.setupContext();
