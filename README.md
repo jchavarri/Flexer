@@ -4,7 +4,7 @@ Flexer is a FramerJS module that allows you to create flexible layouts. This mea
 
 ## Demo
 
-[Here](http://jchavarri.github.io/Flexer/).
+[Here](http://jchavarri.github.io/Flexer/). You can check the code in the [gh-pages branch](https://github.com/jchavarri/Flexer/tree/gh-pages). 
 
 ## Version 
 
