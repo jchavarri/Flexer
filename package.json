@@ -1,6 +1,6 @@
 {
   "name": "flexer",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A FramerJS module to create flexible layouts",
   "main": "lib/Flexer.js",
   "scripts": {
