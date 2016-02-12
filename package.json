@@ -1,0 +1,27 @@
+{
+  "name": "flexer",
+  "version": "0.0.1",
+  "description": "A FramerJS module to create flexible layouts",
+  "main": "src/Flexer.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchavarri/Flexer.git"
+  },
+  "keywords": [
+    "framerjs",
+    "layout",
+    "flexbox"
+  ],
+  "author": "Javier Chávarri <javier.chavarri@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jchavarri/Flexer/issues"
+  },
+  "homepage": "https://github.com/jchavarri/Flexer#readme",
+  "dependencies": {
+    "css-layout": "^1.1.1"
+  }
+}
