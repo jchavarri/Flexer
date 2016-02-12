@@ -2,6 +2,10 @@
 
 Flexer is a FramerJS module that allows you to create flexible layouts. This means you can use proportions or relative values instead of absolute pixels to position and animate layers on your prototypes.
 
+## Demo
+
+[Here](http://jchavarri.github.io/Flexer/).
+
 ## Version 
 
 0.0.2
