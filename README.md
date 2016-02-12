@@ -20,7 +20,7 @@ For further information about modules, check the awesomic [Framer documentation]
 
 ## Usage
 
-Once you import Flexer, you will have all these properties available in your layers (from [css-layout readme](https://github.com/facebook/css-layout):
+Once you import Flexer, you will have all these properties available in your layers (from [css-layout readme](https://github.com/facebook/css-layout)):
 
 - `fixedWidth`, `fixedHeight`: positive number (animatable)
 - `minWidth`, `minHeight`: positive number (animatable)
