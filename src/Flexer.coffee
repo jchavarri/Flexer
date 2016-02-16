@@ -24,7 +24,7 @@ class Flexer extends Framer.EventEmitter
 	curve: undefined
 
 	constructor: (@layer) ->
-		@layer.on("change:subLayers", @_updateTree)
+		@layer.on("change:subLayers", @_subLayersChanged)
 		Framer.Loop.on("update", @_drawIfNeeded)
 		@layer._context.domEventManager.wrap(window).addEventListener("resize", @_didResize)
 		# When the change:subLayers event is triggered, the 'superLayer' property has not been set yet, so we need a way to know
@@ -34,12 +34,18 @@ class Flexer extends Framer.EventEmitter
 
 		# This property contains everything needed in 'computeLayout' to make the calculations
 		@_layoutNode =
-			style: {}
+			style: {
+				flex: 1
+			}
 			children: []
 
 		for property of Flexer.layoutProps
 			if @layer[property]
 				@_layoutNode.style[@_getLayoutProperty(property)] = @layer[property]
+		
+		@_updateTree
+			added: @layer.children
+			removed: []
 
 	_didResize: =>
 		if not @layer.superLayer
@@ -58,10 +64,14 @@ class Flexer extends Framer.EventEmitter
 	updateProperty: (property, value) ->
 		if property
 			# TODO Check if value exists
-			# TODO How can we handle property removal?
+			# TODO Property removal?
 			# TODO Check value changes from previous value
 			@_layoutNode.style[@_getLayoutProperty(property)] = value
 		
+		@_setNeedsUpdate()
+
+	_subLayersChanged: (layersChanged) =>
+		@_updateTree(layersChanged)
 		@_setNeedsUpdate()
 
 	_updateTree: (layersChanged) =>
@@ -69,7 +79,6 @@ class Flexer extends Framer.EventEmitter
 			@_layoutNode.children.push(layerAdded.layout._layoutNode)
 		for layerRemoved in layersChanged.removed
 			@_layoutNode.children.splice(_layoutNode.indexOf(layerRemoved.layout._layoutNode), 1)
-		@_setNeedsUpdate()
 
 	_setNeedsUpdate: =>
 		rootLayer = @layer
