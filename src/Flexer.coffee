@@ -25,6 +25,7 @@ class Flexer extends Framer.EventEmitter
 
 	constructor: (@layer) ->
 		@layer.on("change:subLayers", @_subLayersChanged)
+		# TODO Attach the listener only on root layers. Use @_sublayerChanged to modify accordingly
 		Framer.Loop.on("update", @_drawIfNeeded)
 		@layer._context.domEventManager.wrap(window).addEventListener("resize", @_didResize)
 		# When the change:subLayers event is triggered, the 'superLayer' property has not been set yet, so we need a way to know
@@ -35,7 +36,8 @@ class Flexer extends Framer.EventEmitter
 		# This property contains everything needed in 'computeLayout' to make the calculations
 		@_layoutNode =
 			style: {
-				flex: 1
+				flex: 1, # Needed for imported layers
+				_default: true # Used to remove default flex later on
 			}
 			children: []
 
@@ -66,6 +68,10 @@ class Flexer extends Framer.EventEmitter
 			# TODO Check if value exists
 			# TODO Property removal?
 			# TODO Check value changes from previous value
+			# Remove the default 'flex' if is there
+			if @_layoutNode.style._default
+				delete @_layoutNode.style._default
+				delete @_layoutNode.style.flex
 			@_layoutNode.style[@_getLayoutProperty(property)] = value
 		
 		@_setNeedsUpdate()
