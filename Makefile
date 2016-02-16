@@ -1,4 +1,5 @@
-PATH := ./node_modules/.bin:${PATH}
+PATH  := ./node_modules/.bin:$(PATH)
+SHELL := /bin/bash
 
 .PHONY : init clean build dist publish
 
