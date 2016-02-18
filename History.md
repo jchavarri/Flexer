@@ -1,4 +1,4 @@
-0.0.3 / 2012-12-05
+0.0.3 / 2015-XX-XX
 
 - Added default style for imported layers
 - Added support for flex after layer creation (issue #1)

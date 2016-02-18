@@ -35,9 +35,10 @@ class Flexer extends Framer.EventEmitter
 
 		# This property contains everything needed in 'computeLayout' to make the calculations
 		@_layoutNode =
+			_default: true # Used to remove default flex later on
 			style: {
-				flex: 1, # Needed for imported layers
-				_default: true # Used to remove default flex later on
+				width: @layer.width, # Layers keep their original size by default
+				height: @layer.height, # Layers keep their original size by default
 			}
 			children: []
 
@@ -69,9 +70,9 @@ class Flexer extends Framer.EventEmitter
 			# TODO Property removal?
 			# TODO Check value changes from previous value
 			# Remove the default 'flex' if is there
-			if @_layoutNode.style._default
-				delete @_layoutNode.style._default
-				delete @_layoutNode.style.flex
+			if @_layoutNode._default
+				delete @_layoutNode._default
+				@_layoutNode.style = {}
 			@_layoutNode.style[@_getLayoutProperty(property)] = value
 		
 		@_setNeedsUpdate()
